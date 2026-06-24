@@ -39,7 +39,7 @@ export function useLetter() {
   async function loadLetter(fileName: string) {
     loading.value = true
     try {
-      const res = await fetch(`/content/${fileName}`)
+      const res = await fetch(`${import.meta.env.BASE_URL}content/${fileName}`)
       const text = await res.text()
       letterContent.value = text
     } catch {

@@ -66,10 +66,12 @@ interface Sticker {
   hidden: boolean
 }
 
+const base = import.meta.env.BASE_URL
+
 const stickers = reactive<Sticker[]>([
   {
     id: 's1',
-    src: '/stickers/Adobe Express - file (1).png',
+    src: `${base}stickers/Adobe Express - file (1).png`,
     style: {
       width: '26%',
       top: '75%',
@@ -81,7 +83,7 @@ const stickers = reactive<Sticker[]>([
   },
   {
     id: 's4',
-    src: '/stickers/Untitled - June 24, 2026 at 02.53.12 (1).png',
+    src: `${base}stickers/Untitled - June 24, 2026 at 02.53.12 (1).png`,
     style: {
       width: '15%',
       top: '5%',
