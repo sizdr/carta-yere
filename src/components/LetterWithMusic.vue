@@ -148,6 +148,8 @@ onBeforeUnmount(() => {
   height: auto;
   max-height: calc(100vh - 80px);
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
   scroll-behavior: smooth;
   perspective: 1200px;
   font-family: "Cormorant", serif;
