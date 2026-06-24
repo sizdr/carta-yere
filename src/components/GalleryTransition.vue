@@ -87,6 +87,8 @@ interface MiniSticker {
   hidden: boolean
 }
 
+const base = import.meta.env.BASE_URL
+
 const props = defineProps<{ visible: boolean }>()
 
 const INFLUENCE_RADIUS = 300
@@ -105,22 +107,22 @@ const trackWidth = TRACK_PADDING * 2 + n * IMG_WIDTH_BASE + (n - 1) * GAP
 const SWEEP_DISTANCE = trackWidth + 300
 
 const imageConfigs: ImageConfig[] = [
-  { widthMult: 1.0,  heightMult: 0.7,  yOffset:   0, rotation: -3, src: '/img/img_1.jpeg', fallbackColor: '#c4a882' },
-  { widthMult: 0.85, heightMult: 1.0,  yOffset:  60, rotation:  5, src: '/img/img_2.jpeg', fallbackColor: '#d4b896' },
-  { widthMult: 1.1,  heightMult: 0.9,  yOffset: -30, rotation: -2, src: '/img/img_3.jpeg', fallbackColor: '#b89870' },
-  { widthMult: 0.9,  heightMult: 1.2,  yOffset:  40, rotation:  6, src: '/img/img_4.jpeg', fallbackColor: '#e0c8a0' },
-  { widthMult: 1.05, heightMult: 1.0,  yOffset: -20, rotation: -4, src: '/img/img_5.jpeg', fallbackColor: '#c8b088' },
-  { widthMult: 0.95, heightMult: 1.15, yOffset:  30, rotation:  3, src: '/img/img_6.jpeg', fallbackColor: '#d0b890' },
+  { widthMult: 1.0,  heightMult: 0.7,  yOffset:   0, rotation: -3, src: `${base}img/img_1.jpeg`, fallbackColor: '#c4a882' },
+  { widthMult: 0.85, heightMult: 1.0,  yOffset:  60, rotation:  5, src: `${base}img/img_2.jpeg`, fallbackColor: '#d4b896' },
+  { widthMult: 1.1,  heightMult: 0.9,  yOffset: -30, rotation: -2, src: `${base}img/img_3.jpeg`, fallbackColor: '#b89870' },
+  { widthMult: 0.9,  heightMult: 1.2,  yOffset:  40, rotation:  6, src: `${base}img/img_4.jpeg`, fallbackColor: '#e0c8a0' },
+  { widthMult: 1.05, heightMult: 1.0,  yOffset: -20, rotation: -4, src: `${base}img/img_5.jpeg`, fallbackColor: '#c8b088' },
+  { widthMult: 0.95, heightMult: 1.15, yOffset:  30, rotation:  3, src: `${base}img/img_6.jpeg`, fallbackColor: '#d0b890' },
 ]
 
 const miniStickers = reactive<MiniSticker[]>([
-  { id: 0, src: '/stickers/download (2).jpeg',                           atIndex: 0, side: 'below', offset: 0.3,  widthPx: 160, rotation: -10, hidden: false },
-  { id: 1, src: '/stickers/download (3).jpeg',                           atIndex: 1, side: 'above', offset: 0.7,  widthPx: 140, rotation:  15, hidden: false },
-  { id: 2, src: '/stickers/Love You Like No Otter (19 Images).jpeg',     atIndex: 3, side: 'below', offset: 1.2,  widthPx: 180, rotation:  -6, hidden: false },
-  { id: 3, src: '/stickers/??.jpeg',                                     atIndex: 4, side: 'above', offset: 0.6,  widthPx: 150, rotation:  20, hidden: false },
-  { id: 4, src: '/stickers/Adobe Express - file (2).png',                atIndex: 2, side: 'above', offset: 0.7,  widthPx: 130, rotation:  -8, hidden: false },
-  { id: 5, src: '/stickers/Untitled - June 24, 2026 at 02.48.04.png',   atIndex: 5, side: 'below', offset: 1,  widthPx: 170, rotation:   6, hidden: false },
-  { id: 6, src: '/stickers/Untitled - June 24, 2026 at 02.53.12.png',   atIndex: 2, side: 'below', offset: 0.5,  widthPx: 160, rotation:  10, hidden: false },
+  { id: 0, src: `${base}stickers/download (2).jpeg`,                           atIndex: 0, side: 'below', offset: 0.3,  widthPx: 160, rotation: -10, hidden: false },
+  { id: 1, src: `${base}stickers/download (3).jpeg`,                           atIndex: 1, side: 'above', offset: 0.7,  widthPx: 140, rotation:  15, hidden: false },
+  { id: 2, src: `${base}stickers/Love You Like No Otter (19 Images).jpeg`,     atIndex: 3, side: 'below', offset: 1.2,  widthPx: 180, rotation:  -6, hidden: false },
+  { id: 3, src: `${base}stickers/??.jpeg`,                                     atIndex: 4, side: 'above', offset: 0.6,  widthPx: 150, rotation:  20, hidden: false },
+  { id: 4, src: `${base}stickers/Adobe Express - file (2).png`,                atIndex: 2, side: 'above', offset: 0.7,  widthPx: 130, rotation:  -8, hidden: false },
+  { id: 5, src: `${base}stickers/Untitled - June 24, 2026 at 02.48.04.png`,   atIndex: 5, side: 'below', offset: 1,  widthPx: 170, rotation:   6, hidden: false },
+  { id: 6, src: `${base}stickers/Untitled - June 24, 2026 at 02.53.12.png`,   atIndex: 2, side: 'below', offset: 0.5,  widthPx: 160, rotation:  10, hidden: false },
 ])
 
 const imageRefs = ref<(HTMLElement | undefined)[]>([])
